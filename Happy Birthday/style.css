@@ -1,0 +1,741 @@
+/* GOOGLE FONT FALLBACK */
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+    font-family:'Poppins',sans-serif;
+    min-height:100vh;
+    overflow:hidden;
+    background:linear-gradient(135deg,#1e0b36,#3c1361,#ff69b4);
+    color:white;
+    position:relative;
+}
+
+/* SCENE SYSTEM */
+
+.scene{
+    position:absolute;
+    inset:0;
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+    padding:25px;
+    text-align:center;
+
+    opacity:0;
+    visibility:hidden;
+    transition:1s;
+}
+
+.scene.active{
+    opacity:1;
+    visibility:visible;
+}
+
+/* GLASS EFFECT */
+
+.scene>*{
+    position:relative;
+    z-index:2;
+}
+
+.scene::before{
+    content:"";
+    position:absolute;
+    width:90%;
+    max-width:550px;
+    height:auto;
+    min-height:60%;
+    background:rgba(255,255,255,0.12);
+    border-radius:30px;
+    backdrop-filter:blur(15px);
+    box-shadow:
+    0 0 30px rgba(255,255,255,.15);
+    z-index:1;
+}
+
+/* HEADINGS */
+
+h1{
+    font-family:'Pacifico',cursive;
+    font-size:3rem;
+    margin-bottom:20px;
+    color:#fff;
+}
+
+h2{
+    font-size:2rem;
+    margin-bottom:20px;
+    color:#fff5f8;
+}
+
+p{
+    line-height:1.8;
+}
+
+/* BUTTONS */
+
+button{
+    margin-top:30px;
+    border:none;
+    outline:none;
+    background:linear-gradient(45deg,#ff4fa1,#ff85c1);
+    color:white;
+    padding:15px 35px;
+    border-radius:50px;
+    font-size:17px;
+    cursor:pointer;
+    transition:.4s;
+    box-shadow:
+    0 10px 25px rgba(255,105,180,.4);
+}
+
+button:hover{
+    transform:translateY(-5px);
+}
+
+button:active{
+    transform:scale(.95);
+}
+
+/* TYPEWRITER TEXT */
+
+.typewriter{
+    max-width:500px;
+    line-height:1.7;
+    animation:fadeUp 2s ease;
+}
+
+/* FADE UP */
+
+@keyframes fadeUp{
+
+    from{
+        opacity:0;
+        transform:translateY(40px);
+    }
+
+    to{
+        opacity:1;
+        transform:translateY(0);
+    }
+
+}
+
+/* STARRY BACKGROUND */
+
+.stars{
+    position:absolute;
+    inset:0;
+    overflow:hidden;
+}
+
+.stars::before,
+.stars::after{
+
+content:"";
+
+position:absolute;
+
+width:3px;
+height:3px;
+
+background:white;
+
+border-radius:50%;
+
+box-shadow:
+50px 100px white,
+100px 200px white,
+250px 150px white,
+400px 250px white,
+550px 100px white,
+700px 300px white,
+850px 200px white,
+1000px 400px white,
+300px 400px white,
+600px 500px white,
+900px 80px white;
+
+animation:twinkle 3s infinite alternate;
+}
+
+.stars::after{
+animation-delay:1.5s;
+}
+
+@keyframes twinkle{
+
+from{
+opacity:.2;
+}
+
+to{
+opacity:1;
+}
+
+}
+
+/* GIFT */
+
+.giftBox{
+    font-size:120px;
+    cursor:pointer;
+    animation:shake 2s infinite;
+    transition:.5s;
+}
+
+.giftBox:hover{
+    transform:scale(1.1);
+}
+
+@keyframes shake{
+
+0%{
+transform:rotate(0deg);
+}
+
+25%{
+transform:rotate(-10deg);
+}
+
+50%{
+transform:rotate(10deg);
+}
+
+75%{
+transform:rotate(-10deg);
+}
+
+100%{
+transform:rotate(0deg);
+}
+
+}
+
+/* BIBLE VERSE CARD */
+
+.verse{
+
+max-width:500px;
+
+padding:25px;
+
+line-height:1.8;
+
+background:rgba(255,255,255,.15);
+
+border-radius:25px;
+
+backdrop-filter:blur(20px);
+
+box-shadow:
+0 0 25px rgba(255,255,255,.15);
+
+animation:fadeUp 1.5s;
+
+}
+
+/* MESSAGE */
+
+.message{
+
+display:none;
+
+max-width:500px;
+
+padding:25px;
+
+line-height:2;
+
+background:rgba(255,255,255,.15);
+
+border-radius:30px;
+
+backdrop-filter:blur(20px);
+
+margin-top:30px;
+
+box-shadow:
+0 0 30px rgba(255,255,255,.2);
+
+}
+
+/* MOBILE */
+
+@media(max-width:768px){
+
+h1{
+font-size:2.2rem;
+}
+
+h2{
+font-size:1.5rem;
+}
+
+button{
+width:100%;
+max-width:280px;
+}
+
+.giftBox{
+font-size:100px;
+}
+
+.scene::before{
+width:94%;
+}
+
+}
+
+/* ========================= */
+/* PART 2 - LETTER + CAKE */
+/* ========================= */
+
+
+/* LETTER */
+
+.letter{
+    font-size:110px;
+    cursor:pointer;
+    transition:.6s;
+    animation:letterFloat 3s ease-in-out infinite;
+}
+
+.letter:hover{
+    transform:scale(1.15);
+}
+
+@keyframes letterFloat{
+
+0%,100%{
+transform:translateY(0);
+}
+
+50%{
+transform:translateY(-20px);
+}
+
+}
+
+
+/* BIRTHDAY MESSAGE */
+
+.message{
+
+display:none;
+
+padding:25px;
+
+max-width:550px;
+
+margin-top:30px;
+
+border-radius:30px;
+
+background:rgba(255,255,255,.15);
+
+backdrop-filter:blur(20px);
+
+box-shadow:
+0 10px 40px rgba(255,105,180,.3);
+
+line-height:2;
+
+font-size:17px;
+
+animation:messageOpen 1.5s ease;
+
+}
+
+.message.show{
+display:block;
+}
+
+@keyframes messageOpen{
+
+from{
+opacity:0;
+transform:scale(.7);
+}
+
+to{
+opacity:1;
+transform:scale(1);
+}
+
+}
+
+
+/* CAKE */
+
+.cake{
+
+font-size:130px;
+
+animation:cakeBounce 2s infinite;
+
+margin-bottom:20px;
+
+}
+
+@keyframes cakeBounce{
+
+0%,100%{
+transform:translateY(0);
+}
+
+50%{
+transform:translateY(-15px);
+}
+
+}
+
+
+/* CANDLES */
+
+.candles{
+
+font-size:45px;
+
+letter-spacing:10px;
+
+margin-bottom:30px;
+
+animation:flicker .7s infinite alternate;
+
+}
+
+@keyframes flicker{
+
+from{
+filter:brightness(.8);
+}
+
+to{
+filter:brightness(1.3);
+}
+
+}
+
+
+/* WISH BUTTON */
+
+.wishBtn{
+
+background:linear-gradient(
+45deg,
+#ff4fa1,
+#ff9bd0
+);
+
+box-shadow:
+0 0 25px rgba(255,105,180,.5);
+
+}
+
+.wishBtn:hover{
+
+transform:translateY(-6px);
+
+box-shadow:
+0 0 40px rgba(255,105,180,.8);
+
+}
+
+
+/* HEARTS */
+
+.heart{
+
+position:absolute;
+
+font-size:30px;
+
+pointer-events:none;
+
+animation:heartFly 5s linear forwards;
+
+}
+
+@keyframes heartFly{
+
+0%{
+opacity:1;
+transform:translateY(0) scale(1);
+}
+
+100%{
+opacity:0;
+transform:translateY(-500px) scale(2);
+}
+
+}
+
+
+/* FLOWERS */
+
+.flower{
+
+position:absolute;
+
+font-size:24px;
+
+pointer-events:none;
+
+animation:flowerFall 8s linear forwards;
+
+}
+
+@keyframes flowerFall{
+
+0%{
+opacity:1;
+transform:translateY(-100px) rotate(0deg);
+}
+
+100%{
+opacity:0;
+transform:translateY(110vh) rotate(360deg);
+}
+
+}
+
+
+/* SPARKLES */
+
+.sparkle{
+
+position:absolute;
+
+font-size:20px;
+
+pointer-events:none;
+
+animation:sparkleMove 3s linear forwards;
+
+}
+
+@keyframes sparkleMove{
+
+0%{
+opacity:1;
+transform:scale(0);
+}
+
+50%{
+transform:scale(1.5);
+}
+
+100%{
+opacity:0;
+transform:translateY(-100px) scale(0);
+}
+
+}
+
+
+/* LETTER MESSAGE CARD */
+
+.message p{
+margin-bottom:15px;
+}
+
+
+/* RESPONSIVE */
+
+@media(max-width:768px){
+
+.letter{
+font-size:90px;
+}
+
+.cake{
+font-size:100px;
+}
+
+.candles{
+font-size:35px;
+letter-spacing:5px;
+}
+
+.message{
+font-size:15px;
+padding:20px;
+}
+
+}
+
+
+
+/* ========================= */
+/* PART 3 - FINALE + ANIMATION */
+/* ========================= */
+
+
+/* FINAL SCENE TEXT */
+
+.happy,
+.birthday,
+.sharial{
+
+position:absolute;
+
+font-family:'Pacifico',cursive;
+
+font-size:3rem;
+
+opacity:0;
+
+animation:flyIn 2s ease forwards;
+
+text-shadow:
+0 0 15px rgba(255,255,255,.6);
+
+}
+
+.happy{
+top:30%;
+left:-200px;
+animation-delay:.5s;
+}
+
+.birthday{
+top:50%;
+right:-300px;
+animation-delay:1s;
+}
+
+.sharial{
+top:-100px;
+left:50%;
+transform:translateX(-50%);
+animation-delay:1.5s;
+}
+
+@keyframes flyIn{
+
+to{
+opacity:1;
+transform:translateX(0) translateY(0);
+}
+
+}
+
+
+/* BALLOONS */
+
+.balloon{
+
+position:absolute;
+
+font-size:40px;
+
+animation:floatUp 6s linear infinite;
+
+opacity:.8;
+
+}
+
+@keyframes floatUp{
+
+0%{
+transform:translateY(100vh);
+opacity:0;
+}
+
+20%{
+opacity:1;
+}
+
+100%{
+transform:translateY(-120vh);
+opacity:0;
+}
+
+}
+
+
+/* FIREWORK GLOW BACKGROUND */
+
+.fireworks{
+
+position:absolute;
+
+inset:0;
+
+background:radial-gradient(circle,
+rgba(255,255,255,.15),
+transparent 70%);
+
+animation:flash 2s infinite;
+
+}
+
+@keyframes flash{
+
+0%,100%{
+opacity:.2;
+}
+
+50%{
+opacity:.6;
+}
+
+}
+
+
+/* FINAL SCREEN TEXT */
+
+.final{
+
+font-size:1.3rem;
+
+max-width:500px;
+
+line-height:2;
+
+animation:fadeUp 2s ease;
+
+}
+
+
+/* TOUCH SPARK EFFECT AREA */
+
+.touch-area{
+
+position:absolute;
+
+inset:0;
+
+z-index:1;
+
+}
+
+
+/* MOBILE FINAL FIXES */
+
+@media(max-width:768px){
+
+.happy,
+.birthday,
+.sharial{
+
+font-size:2rem;
+
+}
+
+.balloon{
+font-size:30px;
+}
+
+.final{
+font-size:1rem;
+padding:15px;
+}
+
+}
